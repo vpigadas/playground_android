@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:padding="16dp"
+	android:orientation="vertical">
+
+	<TextView
+		android:id="@+id/login_linear_txt_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:padding="16dp"
+		android:textStyle="bold"
+		android:textSize="20sp"
+		android:text="@string/app_name" />
+
+	<Space
+		android:layout_width="match_parent"
+		android:layout_height="16dp"/>
+
+	<EditText
+		android:id="@+id/login_linear_edit_username"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/login_linear_username" />
+
+	<Space
+		android:layout_width="match_parent"
+		android:layout_height="4dp"/>
+
+	<EditText
+		android:id="@+id/login_linear_edit_pass"
+		android:layout_width="match_parent"
+		android:inputType="numberPassword"
+		android:layout_height="wrap_content"
+		android:hint="@string/login_linear_pass" />
+
+	<Space
+		android:layout_width="match_parent"
+		android:layout_height="16dp"/>
+
+	<Button
+		android:id="@+id/login_linear_btn_login"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingHorizontal="32dp"
+		android:layout_gravity="right"
+		android:text="Login" />
+
+</LinearLayout>

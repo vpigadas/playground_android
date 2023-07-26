@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:padding="16dp">
+
+	<TextView
+		android:id="@+id/login_contrain_txt_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:gravity="center"
+		android:padding="16dp"
+		android:text="@string/app_name"
+		android:textSize="20sp"
+		android:textStyle="bold"
+		app:layout_constraintVertical_chainStyle="packed"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintTop_toTopOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/login_contrain_space_title"/>
+
+	<Space
+		android:id="@+id/login_contrain_space_title"
+		android:layout_width="match_parent"
+		android:layout_height="16dp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/login_contrain_edit_username"
+		app:layout_constraintTop_toBottomOf="@id/login_contrain_txt_title" />
+
+	<EditText
+		android:id="@+id/login_contrain_edit_username"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/login_linear_username"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/login_contrain_space_username"
+		app:layout_constraintTop_toBottomOf="@id/login_contrain_space_title" />
+
+	<Space
+		android:id="@+id/login_contrain_space_username"
+		android:layout_width="match_parent"
+		android:layout_height="4dp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/login_contrain_edit_pass"
+		app:layout_constraintTop_toBottomOf="@id/login_contrain_edit_username" />
+
+	<EditText
+		android:id="@+id/login_contrain_edit_pass"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:hint="@string/login_linear_pass"
+		android:inputType="numberPassword"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/login_contrain_space_pass"
+		app:layout_constraintTop_toBottomOf="@id/login_contrain_space_username" />
+
+	<Space
+		android:id="@+id/login_contrain_space_pass"
+		android:layout_width="match_parent"
+		android:layout_height="16dp"
+		app:layout_constraintLeft_toLeftOf="parent"
+		app:layout_constraintBottom_toTopOf="@id/login_contrain_btn_login"
+		app:layout_constraintTop_toBottomOf="@id/login_contrain_edit_pass" />
+
+	<Button
+		android:id="@+id/login_contrain_btn_login"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:paddingHorizontal="32dp"
+		android:text="Login"
+		app:layout_constraintRight_toRightOf="parent"
+		app:layout_constraintBottom_toBottomOf="parent"
+		app:layout_constraintTop_toBottomOf="@id/login_contrain_space_pass" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

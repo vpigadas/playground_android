@@ -40,11 +40,10 @@ public class NetworkActivity extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
 
 
-// Instantiate the RequestQueue.
-
+        // Instantiate the RequestQueue.
         String url = "https://catfact.ninja/fact";
 
-// Request a string response from the provided URL.
+        // Request a string response from the provided URL.
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url,
                 new Response.Listener<String>() {
                     @Override

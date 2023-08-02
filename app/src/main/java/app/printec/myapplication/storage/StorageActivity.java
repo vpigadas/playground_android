@@ -64,15 +64,32 @@ public class StorageActivity extends AppCompatActivity {
             }
         });
 
+        UserEntity user = new UserEntity();
+        user.setId("100");
 
-        MyDatabaseInstance instance = Room.databaseBuilder(this, MyDatabaseInstance.class, "database").allowMainThreadQueries().build();
-        try {
-            instance.getUserDao().save(new UserEntity());
+        MyDatabaseInstance instance = Room.databaseBuilder(StorageActivity.this, MyDatabaseInstance.class, "database").build();
 
-            List<UserEntity> data = instance.getUserDao().read();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        new MyAsyncTask(instance, new MyAsyncTask.Listener() {
+            @Override
+            public void onSuccess(List<UserEntity> users) {
+                Log.d("DATABASE", String.valueOf(users));
+            }
+
+            @Override
+            public void onFailed(Exception exception) {
+                Log.d("DATABASE", exception.getLocalizedMessage(), exception);
+            }
+        }).execute(user);
+
+//        MyDatabaseInstance instance = Room.databaseBuilder(this, MyDatabaseInstance.class, "database").build();
+//        try {
+//
+//            instance.getUserDao().save(user);
+//
+//            List<UserEntity> data = instance.getUserDao().read();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
 
     }

@@ -1,5 +1,6 @@
 package app.printec.myapplication.storage;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
@@ -12,13 +13,14 @@ public class UserEntity {
 
     @PrimaryKey
     @ColumnInfo(name = "user_id")
+    @NonNull
     private String id;
     @ColumnInfo(name = "full_name")
     private String fullName;
     @ColumnInfo(name = "age")
     private int age;
-    @ColumnInfo(name = "achievements")
-    private List<String> achievements;
+//    @ColumnInfo(name = "achievements")
+//    private List<String> achievements;
 
     public String getId() {
         return id;
@@ -44,25 +46,25 @@ public class UserEntity {
         this.age = age;
     }
 
-    public List<String> getAchievements() {
-        return achievements;
-    }
-
-    public void setAchievements(List<String> achievements) {
-        this.achievements = achievements;
-    }
+//    public List<String> getAchievements() {
+//        return achievements;
+//    }
+//
+//    public void setAchievements(List<String> achievements) {
+//        this.achievements = achievements;
+//    }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserEntity that = (UserEntity) o;
-        return age == that.age && Objects.equals(id, that.id) && Objects.equals(fullName, that.fullName) && Objects.equals(achievements, that.achievements);
+        return age == that.age && Objects.equals(id, that.id) && Objects.equals(fullName, that.fullName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, fullName, age, achievements);
+        return Objects.hash(id, fullName, age);
     }
 
     @Override
@@ -71,7 +73,6 @@ public class UserEntity {
                 "id='" + id + '\'' +
                 ", fullName='" + fullName + '\'' +
                 ", age=" + age +
-                ", achievements=" + achievements +
                 '}';
     }
 }

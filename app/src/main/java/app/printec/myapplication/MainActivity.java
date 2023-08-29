@@ -10,8 +10,12 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentContainerView;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.snackbar.Snackbar;
+
+import app.printec.myapplication.fragment.MyFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -52,6 +56,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 5000);
             }
         });
+
+        FragmentContainerView containerView = findViewById(R.id.fragment_container);
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, MyFragment.newInstance("vassilis", "100"));
+        fragmentTransaction.commit();
+
     }
 
     @Override

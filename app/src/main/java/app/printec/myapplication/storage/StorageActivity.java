@@ -90,8 +90,6 @@ public class StorageActivity extends AppCompatActivity {
 //        } catch (Exception e) {
 //            e.printStackTrace();
 //        }
-
-
     }
 
     @Override
